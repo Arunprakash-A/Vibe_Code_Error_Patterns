@@ -9,3 +9,6 @@
    * **Error** Pno such method `is_bfloat16_supported()` for CPU (however, cuda.is_bfloat16_supported() is available)
 5. `streamer = streamers if len(streamers) > 1 else streamers`
    * `streamers` is a list; however, the if condition is redundant here!. Moreover, HF streamer doesn't natively support batch inputs (i.e., len(streamers)>1, it is always 1)
+# Misc
+1. It assumes you have an appropriate privilege to access critical resources in the SLURM server; therefore, `ProfileActivity.CUDA` throws the following error.
+    * **Error**: function cbapi->getCuptiStatus() failed with error CUPTI_ERROR_INVALID_DEVICE (2) (insufficient privilege)
